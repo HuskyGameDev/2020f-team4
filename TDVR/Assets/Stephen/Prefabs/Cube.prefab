@@ -223,3 +223,7 @@ MonoBehaviour:
   snapZonePrefab: {fileID: 462629476083658384, guid: 9c32aa5f321a17f46b541c1675ad53cf,
     type: 3}
   destroyDelay: 1
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4663
+  spawner: {fileID: 7195538137494065010, guid: 17c1912e8c3d0e044a0d7f649ac0f536, type: 3}
