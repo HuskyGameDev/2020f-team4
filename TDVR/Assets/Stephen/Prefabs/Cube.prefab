@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 3885815280231911145}
   - component: {fileID: 3885815280231911146}
   - component: {fileID: 3885815280231911147}
-  m_Layer: 8
+  - component: {fileID: -3529623448720474432}
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -142,10 +143,32 @@ MonoBehaviour:
       m_Calls: []
   m_OnSelectEnter:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -3529623448720474432}
+        m_MethodName: CreateSnapZone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   m_OnSelectExit:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -3529623448720474432}
+        m_MethodName: DestroySnapZone
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnActivate:
     m_PersistentCalls:
       m_Calls: []
@@ -185,3 +208,18 @@ MonoBehaviour:
   m_ThrowAngularVelocityScale: 0.25
   m_GravityOnDetach: 0
   m_RetainTransformParent: 1
+--- !u!114 &-3529623448720474432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3885815280231911060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62961cd8cbf614e4a9ad45994962652d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snapZonePrefab: {fileID: 462629476083658384, guid: 9c32aa5f321a17f46b541c1675ad53cf,
+    type: 3}
+  destroyDelay: 1
