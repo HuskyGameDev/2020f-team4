@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
-public class SpawnTower : XRSocketInteractor
+public class SpawnTower : MonoBehaviour
 {
     public GameObject objectToSpawn;
     public GameObject spawnedObject;
     public Transform spawnedParent;
     public float cooldownTime = 1;
-
-    private XRSocketInteractor socket;
+    
     private Transform trans;
     private float lastPulledTime = 0;
 
     // Start is called before the first frame update
-    new void Start()
+    void Start()
     {
-        socket = GetComponent<XRSocketInteractor>();
         trans = GetComponent<Transform>();
         if (!spawnedObject)
         {
@@ -29,10 +27,8 @@ public class SpawnTower : XRSocketInteractor
         }
     }
 
-    new void OnTriggerExit(Collider interactable)
+    void OnTriggerExit(Collider interactable)
     {
-
-        base.OnTriggerExit(interactable);
         if (interactable.tag == "Tower")
         {
             spawnedObject = null;
