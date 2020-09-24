@@ -16,6 +16,7 @@ public class TeleportController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // get controllers
         if (rightTeleportRay)
             rightRayInteractor = rightTeleportRay.gameObject.GetComponent<XRRayInteractor>();
         if (leftTeleportRay)
@@ -25,6 +26,7 @@ public class TeleportController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // turn on teleport ray if active
         if (leftTeleportRay)
         {
             bool active = CheckIfActivated(leftTeleportRay);
@@ -40,12 +42,14 @@ public class TeleportController : MonoBehaviour
         }
     }
 
+    // CheckIfActivated gets input from the controller to tell if the teleport button is activated
     public bool CheckIfActivated(XRController controller)
     {
         InputHelpers.IsPressed(controller.inputDevice, teleportActivationButton, out bool isActivated, activationThreshold);
         return isActivated;
     }
 
+    // SetRotation is called upon teleport to set the player's "neutral" facing towards the front of the teleport pad
     public void SetRotation(Transform reference)
     {
         transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, reference.eulerAngles.y, 0));

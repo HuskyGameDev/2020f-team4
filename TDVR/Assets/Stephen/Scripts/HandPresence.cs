@@ -21,6 +21,7 @@ public class HandPresence : MonoBehaviour
         TryInitialize();
     }
 
+    // TryInitialize is called at start and every update until it has successfully completed
     void TryInitialize()
     {
         List<InputDevice> devices = new List<InputDevice>();
@@ -51,6 +52,7 @@ public class HandPresence : MonoBehaviour
         handAnimator = spawnedHandModel.GetComponent<Animator>();
     }
 
+    // UpdateHandAnimation sends controller trigger/grip values to hand animator
     void UpdateHandAnimation()
     {
         if(targetDevice.TryGetFeatureValue(CommonUsages.trigger, out float triggerValue))
@@ -81,6 +83,7 @@ public class HandPresence : MonoBehaviour
         }
         else
         {
+            // Show hands or controllers depending on bool showController
             if (showController)
             {
                 spawnedController.SetActive(true);

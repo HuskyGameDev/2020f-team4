@@ -16,6 +16,7 @@ public class SpawnTower : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // if object not already socketed, create object
         trans = GetComponent<Transform>();
         if (!spawnedObject)
         {
@@ -29,6 +30,7 @@ public class SpawnTower : MonoBehaviour
 
     void OnTriggerExit(Collider interactable)
     {
+        // when a tower is removed, check if it can spawn another
         if (interactable.tag == "Tower")
         {
             spawnedObject = null;
@@ -42,6 +44,7 @@ public class SpawnTower : MonoBehaviour
 
     private void Update()
     {
+        // if an object is not spawned, check cooldown to see if it can spawn again
         if (!spawnedObject)
         {
             if (Time.fixedTime - lastPulledTime > cooldownTime)
