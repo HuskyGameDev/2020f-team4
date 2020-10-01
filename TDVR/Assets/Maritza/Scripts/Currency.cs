@@ -10,9 +10,11 @@ public class Currency : MonoBehaviour
 
     public GameObject currencyDisplayObject;   
 
+    private float curTime;
     
     void Start()
     {
+        curTime = Time.fixedTime;
         if(currencyDisplayObject == null)
         {
             currencyDisplayObject = GameObject.Find("CurrencyDisplay"); //Will find the object in scene named CurrencyDisplay
@@ -77,6 +79,9 @@ public class Currency : MonoBehaviour
 
     void Update()
     {
-        
+        if (Time.fixedTime - curTime >= 1f) {
+            curTime = Time.fixedTime;
+            IncreaseCurrency(5);
+        }
     }
 }

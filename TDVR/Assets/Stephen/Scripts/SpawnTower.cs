@@ -8,7 +8,9 @@ public class SpawnTower : MonoBehaviour
     public GameObject objectToSpawn;
     public GameObject spawnedObject;
     public Transform spawnedParent;
+    public Currency balance;
     public float cooldownTime = 1;
+    public int buyCost = 100;
     
     private Transform trans;
     private float lastPulledTime = 0;
@@ -20,7 +22,7 @@ public class SpawnTower : MonoBehaviour
         trans = GetComponent<Transform>();
         if (!spawnedObject)
         {
-            spawnedObject = Instantiate(objectToSpawn, trans.position, trans.rotation, spawnedParent);
+            //spawnedObject = Instantiate(objectToSpawn, trans.position, trans.rotation, spawnedParent);
         }
         if (!spawnedParent)
         {
@@ -30,15 +32,18 @@ public class SpawnTower : MonoBehaviour
 
     void OnTriggerExit(Collider interactable)
     {
-        // when a tower is removed, check if it can spawn another
-        if (interactable.tag == "Tower")
+        // when a tower is removed, reset spawn timer
+        if (interactable.tag == "Tower" && spawnedObject)
         {
             spawnedObject = null;
-            if (Time.fixedTime - lastPulledTime > cooldownTime)
+            /*if (Time.fixedTime - lastPulledTime > cooldownTime)
             {
                 spawnedObject = Instantiate(objectToSpawn, trans.position, trans.rotation, spawnedParent);
                 lastPulledTime = Time.fixedTime;
-            }
+            }*/
+            // testing
+            lastPulledTime = Time.fixedTime;
+            balance.SpendCurrency(100);
         }
     }
 
@@ -47,7 +52,7 @@ public class SpawnTower : MonoBehaviour
         // if an object is not spawned, check cooldown to see if it can spawn again
         if (!spawnedObject)
         {
-            if (Time.fixedTime - lastPulledTime > cooldownTime)
+            if ((Time.fixedTime - lastPulledTime > cooldownTime) && (balance.availableCurrency >= buyCost))
             {
                 spawnedObject = Instantiate(objectToSpawn, trans.position, trans.rotation, spawnedParent);
                 lastPulledTime = Time.fixedTime;

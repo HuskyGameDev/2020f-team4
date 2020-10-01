@@ -58,6 +58,7 @@ public class SnapFollowObject : MonoBehaviour
                 currentHitDistance = hitInfo.distance;
                 snapZone.transform.position = hitInfo.point;
                 snapZone.GetComponent<Transform>().rotation = Quaternion.Euler(0, trans.rotation.eulerAngles.y, 0);
+                Debug.Log(GetInstanceID());
             }
         }
     }
