@@ -13,9 +13,16 @@ public class Pathing : MonoBehaviour
     public float speed = 5f;
     public float accuracyWP = 1f;
 
+    private EnemyStat stat;
+
+    void Awake()
+    {
+        stat = GetComponent<EnemyStat>();
+    }
     // Start is called before the first frame update
     void Start()
     {
+        speed = stat.speed;
 
     }
 
@@ -34,6 +41,7 @@ public class Pathing : MonoBehaviour
                 if (currentWP >= waypoints.Length)
                 {
                     currentWP = 0;
+                    Destroy(gameObject);
                 }
             }
 
