@@ -14,10 +14,16 @@ public class Pathing : MonoBehaviour
     public float accuracyWP = 1f;
 
     private EnemyStat stat;
+    private GameObject wpStoreObject;
+    private WPStore wpStore;
 
     void Awake()
     {
         stat = GetComponent<EnemyStat>();
+        wpStoreObject = GameObject.FindGameObjectWithTag("Waypoints");
+        wpStore = wpStoreObject.GetComponent<WPStore>();
+        waypoints = wpStore.waypoints;
+        goal = waypoints[waypoints.Length - 1].transform;
     }
     // Start is called before the first frame update
     void Start()
