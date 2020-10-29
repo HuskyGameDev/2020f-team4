@@ -8,10 +8,13 @@ public class EnemySpawner : MonoBehaviour
     public GameObject enemySmall;
     public GameObject enemyLarge;
     public GameObject enemyBoss;
+
     private int counter = 0;
     private int spawnType = 0;
     private float spawnDelay = 1.5f;
     private float nextSpawnTime;
+
+    public int numberOfRounds;
 
     // Update is called once per frame
     void Update()

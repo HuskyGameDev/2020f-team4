@@ -47,6 +47,7 @@ public class Pathing : MonoBehaviour
                 if (currentWP >= waypoints.Length)
                 {
                     currentWP = 0;
+                    WaveSpawner.EnemiesAlive--;
                     Destroy(gameObject);
                 }
             }
