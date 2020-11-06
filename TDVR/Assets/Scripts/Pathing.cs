@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Pathing : MonoBehaviour
 {
-
+    [Header("SetUp/testing")]
     public Transform goal;
     public Transform enemy;
     public GameObject[] waypoints;
     int currentWP = 0;
+
+    [Header("Movement towards waypoint variables")]
     public float rotationSpeed = 50f;
     public float speed = 5f;
     public float accuracyWP = 1f;
