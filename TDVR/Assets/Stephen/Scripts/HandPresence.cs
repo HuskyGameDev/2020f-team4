@@ -79,7 +79,7 @@ public class HandPresence : MonoBehaviour
     {
         if (!targetDevice.isValid)
         {
-            TryInitialize();
+            //TryInitialize();
         }
         else
         {
