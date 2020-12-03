@@ -7,7 +7,7 @@ public class BasicShot : MonoBehaviour
     [Header("Variables (WIP)")]
     private Transform target;
     public float speed = 100f;
-    public float damage = 100f;
+    public int damage = 1;
 
     public void Attack (Transform targets)
     {
@@ -37,6 +37,17 @@ public class BasicShot : MonoBehaviour
     void Hit()
     {
         Destroy(gameObject);
-        Destroy(target.gameObject);
+        Damage(target);
+    }
+
+    void Damage(Transform enemy)
+    {
+        EnemyStat e = enemy.GetComponent<EnemyStat>();
+
+        if ( e!= null)
+        {
+            e.TakeDamage(damage);
+        }
+      
     }
 }
