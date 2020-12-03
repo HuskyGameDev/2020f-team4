@@ -81,7 +81,7 @@ public class Currency : MonoBehaviour
     {
         if (Time.fixedTime - curTime >= 1f) {
             curTime = Time.fixedTime;
-            IncreaseCurrency(5);
+            IncreaseCurrency(100);
         }
     }
 }

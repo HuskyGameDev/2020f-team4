@@ -2333,7 +2333,7 @@ MonoBehaviour:
   - button: {fileID: 1078883065}
     action: 2
   paneToOpen: {fileID: 601245791}
-  sceneName: Stephen/Scenes/Test
+  sceneName: Scenes/Menu
 --- !u!114 &1897550504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2454,7 +2454,7 @@ MonoBehaviour:
   - button: {fileID: 1078883065}
     action: 2
   paneToOpen: {fileID: 601245791}
-  sceneName: Stephen/Scenes/Test
+  sceneName: Scenes/Menu
 --- !u!1 &1910910970
 GameObject:
   m_ObjectHideFlags: 0
