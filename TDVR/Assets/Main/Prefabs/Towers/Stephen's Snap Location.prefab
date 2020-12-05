@@ -103,6 +103,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barrel
       objectReference: {fileID: 0}
+    - target: {fileID: 2418574922223273668, guid: 6f8ff75eb1ab2834694784a21e15479d,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f8ff75eb1ab2834694784a21e15479d, type: 3}
 --- !u!1001 &7778392017792543937
@@ -192,6 +197,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1990650502425753956, guid: c994dd03862ec6046ab723106b94f7a3,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1990650502425753957, guid: c994dd03862ec6046ab723106b94f7a3,
         type: 3}

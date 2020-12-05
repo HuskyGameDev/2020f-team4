@@ -33,7 +33,7 @@ public class SpawnTower : MonoBehaviour
     void OnTriggerExit(Collider interactable)
     {
         // when a tower is removed, reset spawn timer
-        if (interactable.tag == "Tower" && spawnedObject)
+        if (interactable.tag == "Tower" && spawnedObject != null)
         {
             spawnedObject = null;
             /*if (Time.fixedTime - lastPulledTime > cooldownTime)

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1688936463546177238}
   m_Layer: 0
   m_Name: Turret
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_OnSelectEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1688936463546177238}
         m_MethodName: CreateSnapZone
         m_Mode: 1
         m_Arguments:
@@ -126,7 +126,7 @@ MonoBehaviour:
   m_OnSelectExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1688936463546177238}
         m_MethodName: DestroySnapZone
         m_Mode: 1
         m_Arguments:
@@ -190,7 +190,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   layerMask:
     serializedVersion: 2
-    m_Bits: 4663
+    m_Bits: 273
   spawner: {fileID: 7195538137494065010, guid: 17c1912e8c3d0e044a0d7f649ac0f536, type: 3}
   showShpereCastInGizmo: 0
   allowedLayer: Placeable Ground
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 6625943937797734547}
   m_Layer: 0
   m_Name: ProjectileSpawn
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -302,6 +302,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Base
       objectReference: {fileID: 0}
+    - target: {fileID: 1990650502425753959, guid: c994dd03862ec6046ab723106b94f7a3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tower
+      objectReference: {fileID: 0}
     - target: {fileID: 6064375543080970064, guid: c994dd03862ec6046ab723106b94f7a3,
         type: 3}
       propertyPath: m_Name
@@ -381,6 +386,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108981291970853723, guid: 6f8ff75eb1ab2834694784a21e15479d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Tower
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f8ff75eb1ab2834694784a21e15479d, type: 3}
