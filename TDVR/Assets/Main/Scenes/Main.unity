@@ -1670,8 +1670,23 @@ PrefabInstance:
         type: 3}
       propertyPath: objectToSpawn
       value: 
-      objectReference: {fileID: 6625943936498246079, guid: 593f6c7e948d8974682bc14fe6ebc895,
+      objectReference: {fileID: 422748077827674356, guid: 9e5ce89108deec544b96f247e7836616,
         type: 3}
+    - target: {fileID: 5652153087896838267, guid: 17c1912e8c3d0e044a0d7f649ac0f536,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6328977175372648302, guid: 17c1912e8c3d0e044a0d7f649ac0f536,
+        type: 3}
+      propertyPath: balance
+      value: 
+      objectReference: {fileID: 863747400}
+    - target: {fileID: 6328977175372648302, guid: 17c1912e8c3d0e044a0d7f649ac0f536,
+        type: 3}
+      propertyPath: spawnedParent
+      value: 
+      objectReference: {fileID: 1251875400}
     - target: {fileID: 7195538137494065010, guid: 17c1912e8c3d0e044a0d7f649ac0f536,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4339,6 +4354,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Turret
+      objectReference: {fileID: 0}
+    - target: {fileID: 6625943936498246079, guid: 593f6c7e948d8974682bc14fe6ebc895,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6625943937319581067, guid: 593f6c7e948d8974682bc14fe6ebc895,
         type: 3}
