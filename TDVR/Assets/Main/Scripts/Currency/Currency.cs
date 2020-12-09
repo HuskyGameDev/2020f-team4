@@ -77,11 +77,11 @@ public class Currency : MonoBehaviour
         currencyDisplayObject.SendMessage("ChangeDisplay", availableCurrency); //Changes text on CurrencyDisplay to match current currency
     }
 
-    void Update()
-    {
-        if (Time.fixedTime - curTime >= 1f) {
-            curTime = Time.fixedTime;
-            IncreaseCurrency(100);
-        }
-    }
+    // void Update()
+    // {
+    //     if (Time.fixedTime - curTime >= 1f) {
+    //         curTime = Time.fixedTime;
+    //         IncreaseCurrency(100);
+    //     }
+    // }
 }

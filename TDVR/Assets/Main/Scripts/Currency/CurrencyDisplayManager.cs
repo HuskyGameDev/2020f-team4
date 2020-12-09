@@ -18,7 +18,7 @@ public class CurrencyDisplayManager : MonoBehaviour
     //Changes the text displayed in the CurrencyDisplay mesh
     void ChangeDisplay(int currency)
     {
-       mesh.text = "Currency = " + currency.ToString();
+       mesh.text = "$" + currency.ToString();
     }
 
 }

@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
     [Header("SetUp/Testing")]
     public string enemyTag = "Enemy";
 
-
+    public bool canShoot = false;
 
     public GameObject basicShot;
     public Transform projectileSpawn;
@@ -55,7 +55,7 @@ public class Turret : MonoBehaviour
         {
             return;
         }
-        if (cooldown <= 0f)
+        if (cooldown <= 0f && canShoot)
         {
             Shoot();
             cooldown = 1f / fireRate;
