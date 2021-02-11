@@ -9,6 +9,7 @@ public class SnapFollowObject : MonoBehaviour
     public Transform spawner;
     public bool showShpereCastInGizmo = false;
     public string allowedLayer = "Placeable Ground";
+    public Collider teleportPlayerCollider = null;
 
     private GameObject snapZone;
     private bool exists = false;
@@ -48,6 +49,12 @@ public class SnapFollowObject : MonoBehaviour
             //GetComponent<Rigidbody>().isKinematic = true;
             //GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Turret>().canShoot = true;
+
+            // select now teleports player to tower
+            if (teleportPlayerCollider != null) {
+                teleportPlayerCollider.enabled = true;
+                GetComponent<XRGrabInteractable>().enabled = false;    
+            }
         }
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = false;
         snapZone.SetActive(false);
@@ -88,13 +95,13 @@ public class SnapFollowObject : MonoBehaviour
     }
 
     // necessary to display wireframe spherecast in editor
-    private void OnDrawGizmosSelected()
-    {
-        if (showShpereCastInGizmo)
-        {
-            Gizmos.color = Color.red;
-            Debug.DrawLine(trans.position, trans.position + Vector3.down * currentHitDistance);
-            Gizmos.DrawWireSphere(trans.position + Vector3.down * currentHitDistance, trans.localScale.x);
-        }
-    }
+    // private void OnDrawGizmosSelected()
+    // {
+    //     if (showShpereCastInGizmo)
+    //     {
+    //         Gizmos.color = Color.red;
+    //         Debug.DrawLine(trans.position, trans.position + Vector3.down * currentHitDistance);
+    //         Gizmos.DrawWireSphere(trans.position + Vector3.down * currentHitDistance, trans.localScale.x);
+    //     }
+    // }
 }

@@ -4330,9 +4330,10 @@ GameObject:
   - component: {fileID: 752048645}
   - component: {fileID: 752048644}
   - component: {fileID: 752048642}
+  - component: {fileID: 752048647}
   m_Layer: 9
   m_Name: XRRig
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4413,6 +4414,20 @@ MonoBehaviour:
   m_TrackingOriginMode: 2
   m_TrackingSpace: 3
   m_CameraYOffset: 1.36144
+--- !u!114 &752048647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 752048641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61200c998236dd94eb340f01623a251c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTransform: {fileID: 752048643}
+  scale: 0.1
 --- !u!1 &770464442
 GameObject:
   m_ObjectHideFlags: 0
