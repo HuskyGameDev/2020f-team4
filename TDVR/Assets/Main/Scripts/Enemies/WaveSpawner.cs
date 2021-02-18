@@ -17,7 +17,7 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
-    public Canvas menuPane;
+    //public Canvas menuPane;
 
     void Start() {
         //menuPane = GameObject.Find("WaveMenu").GetComponent<Canvas>();
@@ -27,9 +27,9 @@ public class WaveSpawner : MonoBehaviour
     void Update()
     {
         if (EnemiesAlive <= 0) {
-            menuPane.enabled = true;
+            //menuPane.enabled = true;
             if (waveIndex == waves.Length) {
-                menuPane.transform.GetChild(0).gameObject.SetActive(false);
+                //menuPane.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
 

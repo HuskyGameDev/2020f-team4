@@ -16,21 +16,31 @@ public class Pathing : MonoBehaviour
 
     private EnemyStat stat;
     private GameObject wpStoreObject;
-    private WPStore wpStore;
+    //private WPStore wpStore;
+    private WPMPStore wpStore;
 
     void Awake()
     {
         stat = GetComponent<EnemyStat>();
         wpStoreObject = GameObject.FindGameObjectWithTag("Waypoints");
-        wpStore = wpStoreObject.GetComponent<WPStore>();
-        waypoints = wpStore.waypoints;
+        //wpStore = wpStoreObject.GetComponent<WPStore>();
+        wpStore = wpStoreObject.GetComponent<WPMPStore>();
+        //waypoints = wpStore.waypoints;
+        int randy = Random.Range(1, 3);
+        if (randy == 1) {
+            waypoints = wpStore.list[0].WPArrays;
+        }
+        else if (randy == 2)
+        {
+            waypoints = wpStore.list[1].WPArrays;
+        }
         goal = waypoints[waypoints.Length - 1].transform;
     }
     // Start is called before the first frame update
     void Start()
     {
-        speed = stat.speed * scaleFactor;
-        accuracyWP *= scaleFactor;
+        //speed = stat.speed * scaleFactor;
+        //accuracyWP *= scaleFactor;
     }
 
     // Update is called once per frame
