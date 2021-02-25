@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 6625943936498246076}
   - component: {fileID: 8108837649330087287}
-  - component: {fileID: -4793764096811414382}
   - component: {fileID: 4553949536111323086}
   - component: {fileID: 1688936463546177238}
+  - component: {fileID: 2479267371810733149}
   m_Layer: 0
-  m_Name: Turret
+  m_Name: Basic Turret
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -51,25 +51,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-4793764096811414382
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6625943936498246079}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 973eff539901bf646aed835655847f07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 0.4
-  fireRate: 1
-  enemyTag: Enemy
-  canShoot: 0
-  basicShot: {fileID: 3463417146674414589, guid: 74c961332ba7ecd4a978871b8ec0c212,
-    type: 3}
-  projectileSpawn: {fileID: 6625943937797734547}
 --- !u!114 &4553949536111323086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -195,6 +176,25 @@ MonoBehaviour:
   spawner: {fileID: 7195538137494065010, guid: 17c1912e8c3d0e044a0d7f649ac0f536, type: 3}
   showShpereCastInGizmo: 0
   allowedLayer: Placeable Ground
+--- !u!114 &2479267371810733149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6625943936498246079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cb09fa33c0b2bc409ff46e720509356, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 10
+  fireRate: 1
+  enemyTag: Enemy
+  canShoot: 1
+  basicShot: {fileID: 3463417146674414589, guid: fedadf188b2c4ce459e573fc6457daa7,
+    type: 3}
+  projectileSpawn: {fileID: 6625943937797734547}
 --- !u!1 &6625943937797734546
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,7 +10,7 @@ public class Pathing : MonoBehaviour
     public GameObject[] waypoints;
     int currentWP = 0;
     public float rotationSpeed = 50f;
-    private float speed = 5f;
+    public float speed = 5f;
     public float accuracyWP = 1f;
     public float scaleFactor = 1f;
 
@@ -29,8 +29,8 @@ public class Pathing : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        speed = stat.speed * scaleFactor;
-        accuracyWP *= scaleFactor;
+       // speed = stat.speed * scaleFactor;
+       // accuracyWP *= scaleFactor;
     }
 
     // Update is called once per frame

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BasicTurret : MonoBehaviour
+public class BTurret : MonoBehaviour
 {
     private Transform target;
 
     [Header("Turret Stats")]
-    public float range = 25f;
+    public float range = 10f;
     public float fireRate = 1f;
     private float cooldown = 0f;
 
@@ -16,8 +16,8 @@ public class BasicTurret : MonoBehaviour
 
     public bool canShoot = false;
 
-    public GameObject basicShot;
-    public Transform projectileSpawn;
+    public GameObject BbasicShot;
+    public Transform BProjectileSpawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +42,8 @@ public class BasicTurret : MonoBehaviour
         if (closestEnemy != null && minDistance <= range)
         {
             target = closestEnemy.transform;
-        } else
+        } 
+        else
         {
             target = null;
         }
@@ -66,10 +67,10 @@ public class BasicTurret : MonoBehaviour
 
     void Shoot()
     {
-        GameObject shooting = (GameObject)Instantiate(basicShot, projectileSpawn.position, projectileSpawn.rotation);
+        GameObject shooting = (GameObject)Instantiate(BbasicShot, BProjectileSpawn.position, BProjectileSpawn.rotation);
         BasicShot shot = shooting.GetComponent<BasicShot>();
 
-        if(shot != null)
+        if (shot != null)
         {
             shot.Attack(target);
         }

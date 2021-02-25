@@ -33,7 +33,7 @@ public class SnapFollowObject : MonoBehaviour
         exists = true;
         GetComponent<Rigidbody>().isKinematic = false;
         GetComponent<Rigidbody>().useGravity = true;
-        GetComponent<Turret>().canShoot = false;
+      //  GetComponent<Turret>().canShoot = false;
     }
 
     // DestroySnapZone deactivates the hovering "holographic" snap zone, called whenever the object is let go
@@ -46,7 +46,7 @@ public class SnapFollowObject : MonoBehaviour
             transform.localRotation = snapZone.transform.rotation;
             GetComponent<Rigidbody>().isKinematic = true;
             GetComponent<Rigidbody>().useGravity = false;
-            GetComponent<Turret>().canShoot = true;
+       //     GetComponent<Turret>().canShoot = true;
         }
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = false;
         snapZone.SetActive(false);
