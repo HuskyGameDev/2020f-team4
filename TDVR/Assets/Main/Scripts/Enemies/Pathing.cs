@@ -26,14 +26,14 @@ public class Pathing : MonoBehaviour
         //wpStore = wpStoreObject.GetComponent<WPStore>();
         wpStore = wpStoreObject.GetComponent<WPMPStore>();
         //waypoints = wpStore.waypoints;
-        int randy = Random.Range(1, 3);
-        if (randy == 1) {
-            waypoints = wpStore.list[0].WPArrays;
-        }
-        else if (randy == 2)
-        {
-            waypoints = wpStore.list[1].WPArrays;
-        }
+
+        //multipathing - get radnom path and assign waypoiny array accordingly
+        int pathNum = wpStore.pathNum;
+        int randy = Random.Range(1, pathNum+1);
+        //Debug.Log(randy);
+        waypoints = wpStore.list[randy - 1].WPArrays;
+        //end of multipathing
+
         goal = waypoints[waypoints.Length - 1].transform;
     }
     // Start is called before the first frame update

@@ -6,6 +6,7 @@ using System;
 [Serializable]
 public class WPMPStore : MonoBehaviour
 {
+    public int pathNum = 0;
     //public GameObject[] waypointArrays;
     public WPList[] list;
     //public List<GameObject[]> WPAList;

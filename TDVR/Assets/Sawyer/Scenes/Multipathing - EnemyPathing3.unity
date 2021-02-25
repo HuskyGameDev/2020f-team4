@@ -150,6 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32e610181ecabe49aff0d6d5572fc7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pathNum: 2
   list:
   - WPArrays:
     - {fileID: 1283840572}
