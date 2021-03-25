@@ -56,7 +56,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7203467882046131078}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.530511, y: -6.2305756, z: -2.0989707}
+  m_LocalPosition: {x: 0, y: -6.2305756, z: -2.0989707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3480481289621703273}
@@ -94,6 +94,7 @@ MonoBehaviour:
   range: 50
   fireRate: 1
   enemyTag: Enemy
+  canShoot: 0
   RbasicShot: {fileID: 3463417146674414589, guid: 2499598062256a442ada04618a619b25,
     type: 3}
   RProjectileSpawn: {fileID: 34074828243159256}
@@ -107,7 +108,7 @@ PrefabInstance:
     - target: {fileID: 886165100764473650, guid: 319133ce7dbb3644eae2f934f3726353,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.078658
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 886165100764473650, guid: 319133ce7dbb3644eae2f934f3726353,
         type: 3}
@@ -117,7 +118,7 @@ PrefabInstance:
     - target: {fileID: 886165100764473650, guid: 319133ce7dbb3644eae2f934f3726353,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.9789705
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 886165100764473650, guid: 319133ce7dbb3644eae2f934f3726353,
         type: 3}
