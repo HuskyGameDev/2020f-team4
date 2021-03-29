@@ -16,31 +16,23 @@ public class Pathing : MonoBehaviour
 
     private EnemyStat stat;
     private GameObject wpStoreObject;
-    //private WPStore wpStore;
-    private WPMPStore wpStore;
+    private Health health;
+    private WPStore wpStore;
 
     void Awake()
     {
         stat = GetComponent<EnemyStat>();
         wpStoreObject = GameObject.FindGameObjectWithTag("Waypoints");
-        //wpStore = wpStoreObject.GetComponent<WPStore>();
-        wpStore = wpStoreObject.GetComponent<WPMPStore>();
-        //waypoints = wpStore.waypoints;
-
-        //multipathing - get radnom path and assign waypoiny array accordingly
-        int pathNum = wpStore.pathNum;
-        int randy = Random.Range(1, pathNum+1);
-        //Debug.Log(randy);
-        waypoints = wpStore.list[randy - 1].WPArrays;
-        //end of multipathing
-
+        health = GameObject.FindGameObjectWithTag("Health").GetComponent<Health>();
+        wpStore = wpStoreObject.GetComponent<WPStore>();
+        waypoints = wpStore.waypoints;
         goal = waypoints[waypoints.Length - 1].transform;
     }
     // Start is called before the first frame update
     void Start()
     {
-        //speed = stat.speed * scaleFactor;
-        //accuracyWP *= scaleFactor;
+        speed = stat.speed * scaleFactor;
+        accuracyWP *= scaleFactor;
     }
 
     // Update is called once per frame
@@ -55,11 +47,15 @@ public class Pathing : MonoBehaviour
             if (Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
             {
                 currentWP++;
-                if (currentWP >= waypoints.Length)
+                if (currentWP >= waypoints.Length)  //last waypoint reached
                 {
                     currentWP = 0;
                     WaveSpawner.EnemiesAlive--;
+
+                    health.DecrementHealth();
+
                     Destroy(gameObject);
+                    
                 }
             }
 

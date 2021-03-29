@@ -9,6 +9,7 @@ TagManager:
   - Waypoints
   - Enemy
   - Currency
+  - Health
   layers:
   - Default
   - TransparentFX
