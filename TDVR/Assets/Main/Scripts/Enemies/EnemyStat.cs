@@ -11,7 +11,7 @@ public class EnemyStat : MonoBehaviour
 
     public void Start() 
     {
-        //currency = GameObject.FindGameObjectWithTag("Currency").GetComponent<Currency>();
+        currency = GameObject.FindGameObjectWithTag("Currency").GetComponent<Currency>();
         moneyGain = health;
     }
     public void TakeDamage(int ammount)
@@ -27,7 +27,7 @@ public class EnemyStat : MonoBehaviour
     void Die()
     {
         WaveSpawner.EnemiesAlive--;
-        //currency.IncreaseCurrency(moneyGain);
+        currency.IncreaseCurrency(moneyGain);
         Destroy(gameObject);
     }
 }
