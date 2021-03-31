@@ -16,16 +16,15 @@ public class Pathing : MonoBehaviour
 
     private EnemyStat stat;
     private GameObject wpStoreObject;
-    //private WPStore wpStore;
+    private Health health;
     private WPMPStore wpStore;
 
     void Awake()
     {
         stat = GetComponent<EnemyStat>();
         wpStoreObject = GameObject.FindGameObjectWithTag("Waypoints");
-        //wpStore = wpStoreObject.GetComponent<WPStore>();
+        health = GameObject.FindGameObjectWithTag("Health").GetComponent<Health>();
         wpStore = wpStoreObject.GetComponent<WPMPStore>();
-        //waypoints = wpStore.waypoints;
 
         //multipathing - get radnom path and assign waypoiny array accordingly
         int pathNum = wpStore.pathNum;
@@ -55,11 +54,15 @@ public class Pathing : MonoBehaviour
             if (Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
             {
                 currentWP++;
-                if (currentWP >= waypoints.Length)
+                if (currentWP >= waypoints.Length)  //last waypoint reached
                 {
                     currentWP = 0;
                     WaveSpawner.EnemiesAlive--;
+
+                    health.DecrementHealth();
+
                     Destroy(gameObject);
+                    
                 }
             }
 

@@ -8,7 +8,7 @@ using TMPro;
 public class CurrencyDisplayManager : MonoBehaviour
 {
 
-    public TextMeshPro mesh; //new text mesh
+    private TextMeshPro mesh; //new text mesh
 
     void Start()
     {
