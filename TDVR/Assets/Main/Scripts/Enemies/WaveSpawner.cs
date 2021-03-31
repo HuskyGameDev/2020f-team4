@@ -16,7 +16,6 @@ public class WaveSpawner : MonoBehaviour
     public float countdown = 2f;
 
     private int waveIndex = 0;
-
     public Canvas menuPane;
 
     void Start() {

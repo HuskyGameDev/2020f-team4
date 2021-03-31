@@ -35,7 +35,7 @@ public class EnemySpawner : MonoBehaviour
         nextSpawnTime = Time.time + spawnDelay;
 
         counter++;
-        if (counter % 5 == 0)
+        if (counter % 3 == 0)
         {
             spawnType++;
         }

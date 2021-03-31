@@ -32,6 +32,8 @@ public class SnapFollowObject : MonoBehaviour
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = true;
         snapZone.SetActive(true);
         exists = true;
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().useGravity = true;
         //GetComponent<Rigidbody>().isKinematic = false;
         //GetComponent<Rigidbody>().useGravity = true;
         //GetComponent<Rigidbody>().WakeUp();
@@ -46,15 +48,9 @@ public class SnapFollowObject : MonoBehaviour
         {
             transform.position = snapZone.transform.GetChild(0).position;
             transform.localRotation = snapZone.transform.rotation;
-            //GetComponent<Rigidbody>().isKinematic = true;
-            //GetComponent<Rigidbody>().useGravity = false;
+            GetComponent<Rigidbody>().isKinematic = true;
+            GetComponent<Rigidbody>().useGravity = false;
             GetComponent<Turret>().canShoot = true;
-
-            // select now teleports player to tower
-            if (teleportPlayerCollider != null) {
-                teleportPlayerCollider.enabled = true;
-                GetComponent<XRGrabInteractable>().enabled = false;    
-            }
         }
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = false;
         snapZone.SetActive(false);

@@ -16,21 +16,31 @@ public class Pathing : MonoBehaviour
 
     private EnemyStat stat;
     private GameObject wpStoreObject;
-    private WPStore wpStore;
+    //private WPStore wpStore;
+    private WPMPStore wpStore;
 
     void Awake()
     {
         stat = GetComponent<EnemyStat>();
         wpStoreObject = GameObject.FindGameObjectWithTag("Waypoints");
-        wpStore = wpStoreObject.GetComponent<WPStore>();
-        waypoints = wpStore.waypoints;
+        //wpStore = wpStoreObject.GetComponent<WPStore>();
+        wpStore = wpStoreObject.GetComponent<WPMPStore>();
+        //waypoints = wpStore.waypoints;
+
+        //multipathing - get radnom path and assign waypoiny array accordingly
+        int pathNum = wpStore.pathNum;
+        int randy = Random.Range(1, pathNum+1);
+        //Debug.Log(randy);
+        waypoints = wpStore.list[randy - 1].WPArrays;
+        //end of multipathing
+
         goal = waypoints[waypoints.Length - 1].transform;
     }
     // Start is called before the first frame update
     void Start()
     {
-        speed = stat.speed * scaleFactor;
-        accuracyWP *= scaleFactor;
+        //speed = stat.speed * scaleFactor;
+        //accuracyWP *= scaleFactor;
     }
 
     // Update is called once per frame
