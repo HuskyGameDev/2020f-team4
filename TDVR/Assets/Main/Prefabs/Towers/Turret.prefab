@@ -63,9 +63,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 973eff539901bf646aed835655847f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 25
+  range: 0.4
   fireRate: 1
   enemyTag: Enemy
+  canShoot: 0
   basicShot: {fileID: 3463417146674414589, guid: 74c961332ba7ecd4a978871b8ec0c212,
     type: 3}
   projectileSpawn: {fileID: 6625943937797734547}

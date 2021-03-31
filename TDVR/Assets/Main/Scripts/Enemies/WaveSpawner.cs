@@ -17,22 +17,31 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
 
+    public Canvas menuPane;
+
+    void Start() {
+        //menuPane = GameObject.Find("WaveMenu").GetComponent<Canvas>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (EnemiesAlive > 0) {
-            return;
+        if (EnemiesAlive <= 0) {
+            menuPane.enabled = true;
+            if (waveIndex == waves.Length) {
+                menuPane.transform.GetChild(0).gameObject.SetActive(false);
+            }
         }
 
-        if (countdown <= 0f) {
-            StartCoroutine(SpawnWave());
-            countdown = timeBetweenWaves;
-            return;
-        }
-        countdown -= Time.deltaTime;
+        // if (countdown <= 0f) {
+        //     StartCoroutine(SpawnWave());
+        //     countdown = timeBetweenWaves;
+        //     return;
+        // }
+        // countdown -= Time.deltaTime;
     }
 
-    IEnumerator SpawnWave() {
+    public IEnumerator SpawnWave() {
 
         Wave wave = waves[waveIndex];
 

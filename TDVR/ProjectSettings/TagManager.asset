@@ -8,6 +8,7 @@ TagManager:
   - Hand
   - Waypoints
   - Enemy
+  - Currency
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - 
   - 
   - Placeable Ground
-  - 
-  - 
+  - VR Objects
+  - Tower
   - 
   - 
   - 

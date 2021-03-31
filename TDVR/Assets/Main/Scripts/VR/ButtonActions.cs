@@ -19,7 +19,7 @@ public class ButtonActions : MonoBehaviour
 {
     // List of available functions to attach to buttons.
     // This provides a dropdown of function names in the inspector.
-    enum Act {ChangeScene, OpenPane, Exit};
+    enum Act {ChangeScene, OpenPane, Exit, NextWave};
     // Maps the enumerator to its associated function
     private Dictionary<Act, UnityAction> actionMap = new Dictionary<Act, UnityAction>();
 
@@ -38,6 +38,7 @@ public class ButtonActions : MonoBehaviour
     [SerializeField] private Canvas paneToOpen = null;
     // the name of the scene to switch to on call of ChangeScene()
     [SerializeField] private string sceneName = "";
+    [SerializeField] private WaveSpawner wave = null;
 
     void Start()
     {
@@ -51,8 +52,7 @@ public class ButtonActions : MonoBehaviour
     // TODO: Remove need for global sceneName variable - add it as parameter
     void ChangeScene()
     {
-        //Output this to console when Button1 or Button3 is clicked
-        Debug.Log("You have clicked the play button!");
+        Debug.Log("Changing to scene \'" + sceneName + "\'");
         SceneManager.LoadSceneAsync(sceneName);
     }
 
@@ -60,18 +60,32 @@ public class ButtonActions : MonoBehaviour
     // TODO: Remove need for global paneToOpen variable - add it as parameter
     void OpenPane()
     {
-        //Output this to console when the Button2 is clicked
-        Debug.Log("You have clicked the options button!");
-        paneToOpen.enabled = true;
-        GetComponent<Canvas>().enabled = false;
+        if (paneToOpen != null) {
+            Debug.Log("Opening the pane \'" + paneToOpen.name + "\'");
+            paneToOpen.enabled = true;
+            GetComponent<Canvas>().enabled = false;
+        } else {
+            Debug.Log("Could not open pane; null reference \'paneToOpen\'");
+        }
     }
 
     // Quit the game.
     void Exit()
     {
-        //Output this to console when the Button3 is clicked
         Debug.Log("You have clicked the exit button!");
         Application.Quit();
+    }
+
+    // Advance to the next wave
+    void NextWave() 
+    {
+        if (wave != null) {
+            Debug.Log("Advancing to the next wave");
+            StartCoroutine(wave.SpawnWave());
+            GetComponent<Canvas>().enabled = false;
+        } else {
+            Debug.Log("Could not open pane; null reference \'paneToOpen\'");
+        }
     }
 
     // Associates the enumerators to their functions
@@ -79,5 +93,6 @@ public class ButtonActions : MonoBehaviour
         actionMap.Add(Act.ChangeScene, ChangeScene);
         actionMap.Add(Act.OpenPane, OpenPane);
         actionMap.Add(Act.Exit, Exit);
+        actionMap.Add(Act.NextWave, NextWave);
     }
 }

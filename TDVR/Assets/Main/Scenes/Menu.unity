@@ -1129,6 +1129,7 @@ MonoBehaviour:
     action: 1
   paneToOpen: {fileID: 1897550507}
   sceneName: 
+  wave: {fileID: 0}
 --- !u!114 &601245788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2305,7 +2306,6 @@ GameObject:
   - component: {fileID: 1897550505}
   - component: {fileID: 1897550504}
   - component: {fileID: 1897550503}
-  - component: {fileID: 1897550509}
   m_Layer: 0
   m_Name: Main Menu
   m_TagString: Untagged
@@ -2333,7 +2333,8 @@ MonoBehaviour:
   - button: {fileID: 1078883065}
     action: 2
   paneToOpen: {fileID: 601245791}
-  sceneName: Scenes/Menu
+  sceneName: Main/Scenes/Main
+  wave: {fileID: 0}
 --- !u!114 &1897550504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2434,27 +2435,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1897550509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1897550502}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d7f1c29d49598c4b999dabd61b97a10, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  buttonMap:
-  - button: {fileID: 1322317600}
-    action: 0
-  - button: {fileID: 1753556544}
-    action: 1
-  - button: {fileID: 1078883065}
-    action: 2
-  paneToOpen: {fileID: 601245791}
-  sceneName: Scenes/Menu
 --- !u!1 &1910910970
 GameObject:
   m_ObjectHideFlags: 0
