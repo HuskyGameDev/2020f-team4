@@ -16,6 +16,11 @@ public class WaveSpawner : MonoBehaviour
     public float countdown = 2f;
 
     private int waveIndex = 0;
+    public Canvas menuPane;
+
+    void Start() {
+        //menuPane = GameObject.Find("WaveMenu").GetComponent<Canvas>();
+    }
 
     public Canvas menuPane;
 
