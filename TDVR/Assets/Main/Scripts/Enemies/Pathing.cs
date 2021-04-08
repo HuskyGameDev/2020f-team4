@@ -34,6 +34,9 @@ public class Pathing : MonoBehaviour
         //end of multipathing
 
         goal = waypoints[waypoints.Length - 1].transform;
+        // rotationSpeed *= scaleFactor;
+        speed *= scaleFactor;
+        accuracyWP *= scaleFactor;
     }
     // Start is called before the first frame update
     void Start()

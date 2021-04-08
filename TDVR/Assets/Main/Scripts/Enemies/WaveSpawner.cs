@@ -17,13 +17,6 @@ public class WaveSpawner : MonoBehaviour
 
     private int waveIndex = 0;
     public Canvas menuPane;
-
-    void Start() {
-        //menuPane = GameObject.Find("WaveMenu").GetComponent<Canvas>();
-    }
-
-    public Canvas menuPane;
-
     public Canvas gameOver; //gameover canvas
     public Health health;   //Health Box
 

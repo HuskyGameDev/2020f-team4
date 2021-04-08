@@ -9,11 +9,9 @@ public class SnapFollowObject : MonoBehaviour
     public Transform spawner;
     public bool showShpereCastInGizmo = false;
     public string allowedLayer = "Placeable Ground";
-    public Collider teleportPlayerCollider = null;
 
     private GameObject snapZone;
     private bool exists = false;
-    private bool intersected = false;
     private Transform trans;
     private float currentHitDistance;
 
@@ -22,43 +20,35 @@ public class SnapFollowObject : MonoBehaviour
     {
         trans = GetComponent<Transform>();
         snapZone = transform.parent.GetChild(1).gameObject;
-        GetComponent<Rigidbody>().isKinematic = true;
-        GetComponent<Rigidbody>().useGravity = false;
     }
 
-    // CreateSnapZone creates a hovering "holographic" snap zone, called whenever the object is picked up
+    // CreateSnapZone creates a hovering "holographic" snap zone; called whenever the object is picked up
     public void CreateSnapZone()
     {
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = true;
         snapZone.SetActive(true);
         exists = true;
-        GetComponent<Rigidbody>().isKinematic = false;
-        GetComponent<Rigidbody>().useGravity = true;
-        //GetComponent<Rigidbody>().isKinematic = false;
-        //GetComponent<Rigidbody>().useGravity = true;
-        //GetComponent<Rigidbody>().WakeUp();
         GetComponent<Turret>().canShoot = false;
     }
 
     // DestroySnapZone deactivates the hovering "holographic" snap zone, called whenever the object is let go
     public void DestroySnapZone()
     {
-        // snap the object into position if it is in the snapzone
-        if (intersected)
-        {
-            transform.position = snapZone.transform.GetChild(0).position;
-            transform.localRotation = snapZone.transform.rotation;
-            GetComponent<Rigidbody>().isKinematic = true;
-            GetComponent<Rigidbody>().useGravity = false;
-            GetComponent<Turret>().canShoot = true;
-        }
+        // snap the object into position when released and kill momentum
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+        GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        transform.position = snapZone.transform.GetChild(0).position;
+        transform.localRotation = snapZone.transform.rotation;
+        GetComponent<Turret>().canShoot = true;
+        GetComponent<Rigidbody>().WakeUp();
+        // disable the snap zone
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = false;
         snapZone.SetActive(false);
         exists = false;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         // when object is held, perform spherecast directly down to see if the surface below the object is legal to place the object onto
         if (exists)
@@ -72,32 +62,4 @@ public class SnapFollowObject : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        // if it intersects with the snapzone, allow snapping upon drop
-        if (other != null && snapZone != null)
-            if (other.gameObject.GetInstanceID() == snapZone.transform.GetChild(0).gameObject.GetInstanceID())
-            {
-                intersected = true;
-            }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        // if it stops intersecting with the snapzone, disallow snapping upon drop
-        if (other != null && snapZone != null)
-            if (other.gameObject.GetInstanceID() == snapZone.transform.GetChild(0).gameObject.GetInstanceID())
-                intersected = false;
-    }
-
-    // necessary to display wireframe spherecast in editor
-    // private void OnDrawGizmosSelected()
-    // {
-    //     if (showShpereCastInGizmo)
-    //     {
-    //         Gizmos.color = Color.red;
-    //         Debug.DrawLine(trans.position, trans.position + Vector3.down * currentHitDistance);
-    //         Gizmos.DrawWireSphere(trans.position + Vector3.down * currentHitDistance, trans.localScale.x);
-    //     }
-    // }
 }
