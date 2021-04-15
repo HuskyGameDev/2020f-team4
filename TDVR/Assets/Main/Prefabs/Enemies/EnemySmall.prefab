@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5353698704991785944}
   - component: {fileID: 7876156745352360199}
   - component: {fileID: 1920370644018870089}
+  - component: {fileID: 9169451643110920805}
   m_Layer: 0
   m_Name: EnemySmall
   m_TagString: Enemy
@@ -131,3 +132,19 @@ MonoBehaviour:
   rotationSpeed: 50
   accuracyWP: 1
   scaleFactor: 0.02
+--- !u!54 &9169451643110920805
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215368479805406041}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

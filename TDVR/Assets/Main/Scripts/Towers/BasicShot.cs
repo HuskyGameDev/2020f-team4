@@ -9,7 +9,7 @@ public class BasicShot : MonoBehaviour
     public float speed = 100f;
     public int damage = 1;
 
-    public void Attack (Transform targets)
+    public virtual void Attack (Transform targets)
     {
         target = targets;
     }
@@ -40,7 +40,7 @@ public class BasicShot : MonoBehaviour
         Damage(target);
     }
 
-    void Damage(Transform enemy)
+    protected void Damage(Transform enemy)
     {
         EnemyStat e = enemy.GetComponent<EnemyStat>();
 
