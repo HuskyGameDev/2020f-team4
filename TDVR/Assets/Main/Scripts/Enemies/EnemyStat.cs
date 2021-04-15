@@ -14,9 +14,9 @@ public class EnemyStat : MonoBehaviour
         currency = GameObject.FindGameObjectWithTag("Currency").GetComponent<Currency>();
         moneyGain = health;
     }
-    public void TakeDamage(int ammount)
+    public void TakeDamage(int amount)
     {
-        health -= ammount;
+        health -= amount;
 
         if (health <= 0)
         {

@@ -16,21 +16,29 @@ public class WaveSpawner : MonoBehaviour
     public float countdown = 2f;
 
     private int waveIndex = 0;
-
     public Canvas menuPane;
+    public Canvas gameOver; //gameover canvas
+    public Health health;   //Health Box
 
     void Start() {
-        //menuPane = GameObject.Find("WaveMenu").GetComponent<Canvas>();
+        gameOver.enabled = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (EnemiesAlive <= 0) {
+        if (EnemiesAlive <= 0 && !(health.GetHealth() <= 0)) {    //where menu is made visible if all enemies are defeated and player is still alive
             menuPane.enabled = true;
             if (waveIndex == waves.Length) {
-                menuPane.transform.GetChild(0).gameObject.SetActive(false);
+                menuPane.transform.GetChild(0).gameObject.SetActive(false); //finished all waves, only get exit button in the menu and no next wave button
             }
+        }
+
+        if (health.GetHealth() <= 0)    //if player DIES only give them the game over splash and the quit botton, no next round button. F.
+        {
+            menuPane.enabled = true;
+            menuPane.transform.GetChild(0).gameObject.SetActive(false);
+            gameOver.enabled = true;
         }
 
         // if (countdown <= 0f) {
