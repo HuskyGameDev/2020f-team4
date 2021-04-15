@@ -9,6 +9,7 @@ TagManager:
   - Waypoints
   - Enemy
   - Currency
+  - Health
   layers:
   - Default
   - TransparentFX
@@ -20,8 +21,8 @@ TagManager:
   - 
   - Placeable Ground
   - VR Objects
-  - 
-  - 
+  - Tower
+  - Teleporters
   - 
   - 
   - 

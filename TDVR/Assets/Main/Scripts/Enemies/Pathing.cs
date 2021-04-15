@@ -10,27 +10,39 @@ public class Pathing : MonoBehaviour
     public GameObject[] waypoints;
     int currentWP = 0;
     public float rotationSpeed = 50f;
-    public float speed = 5f;
+    private float speed = 5f;
     public float accuracyWP = 1f;
     public float scaleFactor = 1f;
 
     private EnemyStat stat;
     private GameObject wpStoreObject;
-    private WPStore wpStore;
+    private Health health;
+    private WPMPStore wpStore;
 
     void Awake()
     {
         stat = GetComponent<EnemyStat>();
         wpStoreObject = GameObject.FindGameObjectWithTag("Waypoints");
-        wpStore = wpStoreObject.GetComponent<WPStore>();
-        waypoints = wpStore.waypoints;
+        health = GameObject.FindGameObjectWithTag("Health").GetComponent<Health>();
+        wpStore = wpStoreObject.GetComponent<WPMPStore>();
+
+        //multipathing - get radnom path and assign waypoiny array accordingly
+        int pathNum = wpStore.pathNum;
+        int randy = Random.Range(1, pathNum+1);
+        //Debug.Log(randy);
+        waypoints = wpStore.list[randy - 1].WPArrays;
+        //end of multipathing
+
         goal = waypoints[waypoints.Length - 1].transform;
+        // rotationSpeed *= scaleFactor;
+        speed *= scaleFactor;
+        accuracyWP *= scaleFactor;
     }
     // Start is called before the first frame update
     void Start()
     {
-       // speed = stat.speed * scaleFactor;
-       // accuracyWP *= scaleFactor;
+        //speed = stat.speed * scaleFactor;
+        //accuracyWP *= scaleFactor;
     }
 
     // Update is called once per frame
@@ -45,11 +57,15 @@ public class Pathing : MonoBehaviour
             if (Vector3.Distance(waypoints[currentWP].transform.position, transform.position) < accuracyWP)
             {
                 currentWP++;
-                if (currentWP >= waypoints.Length)
+                if (currentWP >= waypoints.Length)  //last waypoint reached
                 {
                     currentWP = 0;
                     WaveSpawner.EnemiesAlive--;
+
+                    health.DecrementHealth();
+
                     Destroy(gameObject);
+                    
                 }
             }
 
