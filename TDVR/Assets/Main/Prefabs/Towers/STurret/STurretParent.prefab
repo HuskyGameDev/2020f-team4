@@ -119,6 +119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: STurretSnap
       objectReference: {fileID: 0}
+    - target: {fileID: 2286196725682781563, guid: e6ff6c4288ee856409d9b9861546046f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2590218184180430778, guid: e6ff6c4288ee856409d9b9861546046f,
         type: 3}
       propertyPath: m_LocalPosition.x

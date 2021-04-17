@@ -119,6 +119,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BTurretSnap
       objectReference: {fileID: 0}
+    - target: {fileID: 2286196725682781563, guid: bbaaec80b28a79b4ca11f11431c71e7c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2590218184180430778, guid: bbaaec80b28a79b4ca11f11431c71e7c,
         type: 3}
       propertyPath: m_LocalPosition.x
