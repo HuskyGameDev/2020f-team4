@@ -137,7 +137,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -192,9 +192,8 @@ MonoBehaviour:
   fireRate: 1
   enemyTag: Enemy
   canShoot: 1
-  basicShot: {fileID: 3463417146674414589, guid: fedadf188b2c4ce459e573fc6457daa7,
-    type: 3}
-  projectileSpawn: {fileID: 6625943937797734547}
+  BbasicShot: {fileID: 0}
+  BProjectileSpawn: {fileID: 0}
 --- !u!1 &6625943937797734546
 GameObject:
   m_ObjectHideFlags: 0
