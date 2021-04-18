@@ -20,8 +20,11 @@ public class EnemyStat : MonoBehaviour
 
         if (health <= 0)
         {
+            FindObjectOfType<AudioManager>().Play("EnemyDeayth_1"); // ENEMY DEATH SOUND
             Die();
         }
+
+        FindObjectOfType<AudioManager>().Play("EnemyGrunt_1"); // ENEMY TAKE DAMAGE SOUND
     }
 
     void Die()

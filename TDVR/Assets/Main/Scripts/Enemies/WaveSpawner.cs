@@ -68,6 +68,7 @@ public class WaveSpawner : MonoBehaviour
     }
     void SpawnEnemy(GameObject enemy) {
         Instantiate(enemy, spawnPoint.position, spawnPoint.rotation);
+        FindObjectOfType<AudioManager>().Play("EnemyLaugh_1"); // ENEMY SPAWN SOUND
         EnemiesAlive++;
     }
 }

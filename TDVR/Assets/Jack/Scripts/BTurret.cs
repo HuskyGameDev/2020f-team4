@@ -18,6 +18,7 @@ public class BTurret : MonoBehaviour
 
     public GameObject BbasicShot;
     public Transform BProjectileSpawn;
+    public char TowerType; // specifies the type of tower for sound purposes
     // Start is called before the first frame update
     void Start()
     {
@@ -73,6 +74,23 @@ public class BTurret : MonoBehaviour
         if (shot != null)
         {
             shot.Attack(target);
+
+            // play correct sound
+            switch (TowerType) {
+                case 'B':
+                    FindObjectOfType<AudioManager>().Play("BasicTowerShoot");
+                    break;
+                case 'R':
+                    FindObjectOfType<AudioManager>().Play("RapidTowerShoot");
+                    break;
+                case 'S':
+                    FindObjectOfType<AudioManager>().Play("SniperTowerShoot");
+                    break;
+                default:
+                    FindObjectOfType<AudioManager>().Play("BasicTowerShoot");
+                    break;
+            }
+            // End of sound switch
         }
     }
 }

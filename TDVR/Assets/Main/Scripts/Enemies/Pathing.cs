@@ -64,6 +64,8 @@ public class Pathing : MonoBehaviour
 
                     health.DecrementHealth();
 
+                    FindObjectOfType<AudioManager>().Play("EnemyReachedGoal"); // ENEMY REACHED GOAL
+
                     Destroy(gameObject);
                     
                 }

@@ -215,6 +215,7 @@ MonoBehaviour:
   BbasicShot: {fileID: 3463417146674414589, guid: a80075ceccef3b24892a8e8d39e93d2e,
     type: 3}
   BProjectileSpawn: {fileID: 5608169757505730292}
+  TowerType: 82
 --- !u!114 &8229131617222972744
 MonoBehaviour:
   m_ObjectHideFlags: 0

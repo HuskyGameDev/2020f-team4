@@ -7145,6 +7145,170 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1422644486}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1438549581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1438549583}
+  - component: {fileID: 1438549582}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1438549582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438549581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f3dcaa5b946119428596ff33ca83903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: BasicTowerShoot
+    clip: {fileID: 8300000, guid: 8d6e82401e4c8384bbf04da32b4f96af, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: RapidTowerShoot
+    clip: {fileID: 8300000, guid: afd7cc6ceba74b4439d1d46f27f9c4c1, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: SniperTowerShoot
+    clip: {fileID: 8300000, guid: 0b6d8f5b20eb9cb4caa6a37f67bf4404, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: AOETowerShoot
+    clip: {fileID: 8300000, guid: d7150d0a58a3b9140a693f47eb3d25c4, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: BasicTowerPlacement
+    clip: {fileID: 8300000, guid: 78a0d4ae53538be40b9a18add762741c, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: TowerUpgrade
+    clip: {fileID: 8300000, guid: 3c1ff8f3f94bea54f9b8f29cceee3aa2, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDeath_1
+    clip: {fileID: 8300000, guid: f8dc2371797d72d4d821e544a52e715f, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyDeath_2
+    clip: {fileID: 8300000, guid: 047b17a5e3e629d40951e276d6534830, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyLaugh_1
+    clip: {fileID: 8300000, guid: 129e50e29653bfd4aa1636dfed271579, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyLaugh_2
+    clip: {fileID: 8300000, guid: 414cc13c1c531bc46965d9137088d239, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyGrunt_1
+    clip: {fileID: 8300000, guid: 231928d9d933d624d849b96bf883c6b7, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyGrunt_2
+    clip: {fileID: 8300000, guid: 6f9ad35ca6a532d469c95dc4d4cbca92, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyGrowl_1
+    clip: {fileID: 8300000, guid: 358d3ea73f66cba4eb2557462b5a0b3b, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyGrowl_2
+    clip: {fileID: 8300000, guid: 982d69cee7b26a14aa5b18546b59bd11, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: GameOver
+    clip: {fileID: 8300000, guid: 1289961b5da755b49ba976d4071a807f, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: EnemyReachedGoal
+    clip: {fileID: 8300000, guid: 12d73e1ff1c92e944b73777380ed90e9, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: Teleport
+    clip: {fileID: 8300000, guid: 346e6eb35e9798045b21afb8e1f096c9, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: RoundEnd
+    clip: {fileID: 8300000, guid: 834dc84c07ed8794bbbce62af95414cb, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: RoundStart
+    clip: {fileID: 8300000, guid: e042d9d5d2e93f64bb6d2afc39ad26ee, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+  - name: ChildishMusic
+    clip: {fileID: 8300000, guid: 6603c48dcd2108348ac5970c619f2a81, type: 3}
+    volume: 0.5
+    pitch: 0
+    loop: 0
+    source: {fileID: 0}
+--- !u!4 &1438549583
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1438549581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.35037, y: -4.7998157, z: 21.56102}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1508904364
 GameObject:
   m_ObjectHideFlags: 0

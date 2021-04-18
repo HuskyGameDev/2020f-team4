@@ -26,6 +26,7 @@ public class GameOverUI : MonoBehaviour
     {
         GO.SetActive(true); //game over text
         menu.enabled = true; //make quit button visible
+        FindObjectOfType<AudioManager>().Play("GameOver"); // GAME OVER SOUND
     }
 
 }
