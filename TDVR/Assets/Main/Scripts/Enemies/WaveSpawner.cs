@@ -31,6 +31,7 @@ public class WaveSpawner : MonoBehaviour
             menuPane.enabled = true;
             if (waveIndex == waves.Length) {
                 menuPane.transform.GetChild(0).gameObject.SetActive(false); //finished all waves, only get exit button in the menu and no next wave button
+                menuPane.transform.GetChild(1).gameObject.SetActive(true);
             }
         }
 

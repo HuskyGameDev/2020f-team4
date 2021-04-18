@@ -30,6 +30,7 @@ public class ButtonActions : MonoBehaviour
     struct ButtonActionPair {
         public Button button;
         public Act action;
+        public string sceneName;
     }
 
     // List mapping buttons and actions in the inspector
@@ -37,20 +38,25 @@ public class ButtonActions : MonoBehaviour
     // the pane to open on call of OpenPane()
     [SerializeField] private Canvas paneToOpen = null;
     // the name of the scene to switch to on call of ChangeScene()
-    [SerializeField] private string sceneName = "";
     [SerializeField] private WaveSpawner wave = null;
 
     void Start()
     {
         PopulateDict();
         // adds the selected functions to their buttons as listeners.
-        foreach (ButtonActionPair b in buttonMap)
-            b.button.onClick.AddListener(actionMap[b.action]);
+        foreach (ButtonActionPair b in buttonMap) {
+            if (b.action == Act.ChangeScene) {
+                b.button.onClick.AddListener(() => ChangeScene(b.sceneName));
+            } else {
+                b.button.onClick.AddListener(actionMap[b.action]);
+            }
+        }
+
     }
 
     // Switches to the scene specified in sceneName
     // TODO: Remove need for global sceneName variable - add it as parameter
-    void ChangeScene()
+    void ChangeScene(string sceneName)
     {
         Debug.Log("Changing to scene \'" + sceneName + "\'");
         SceneManager.LoadSceneAsync(sceneName);
@@ -90,7 +96,6 @@ public class ButtonActions : MonoBehaviour
 
     // Associates the enumerators to their functions
     void PopulateDict() {
-        actionMap.Add(Act.ChangeScene, ChangeScene);
         actionMap.Add(Act.OpenPane, OpenPane);
         actionMap.Add(Act.Exit, Exit);
         actionMap.Add(Act.NextWave, NextWave);

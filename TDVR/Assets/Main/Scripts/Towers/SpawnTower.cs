@@ -14,6 +14,7 @@ public class SpawnTower : MonoBehaviour
     
     private Transform trans;
     private float lastPulledTime = 0;
+    Renderer[] rs;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +29,7 @@ public class SpawnTower : MonoBehaviour
         {
             spawnedParent = trans;
         }
+        rs = GetComponentsInChildren<Renderer>();
     }
 
     void OnTriggerExit(Collider interactable)
@@ -43,7 +45,9 @@ public class SpawnTower : MonoBehaviour
             }*/
             // testing
             lastPulledTime = Time.fixedTime;
-            balance.SpendCurrency(100);
+            balance.SpendCurrency(buyCost);
+            foreach(Renderer r in rs)
+                r.enabled = true;
         }
     }
 
@@ -56,7 +60,13 @@ public class SpawnTower : MonoBehaviour
             {
                 spawnedObject = Instantiate(objectToSpawn, trans.position, trans.rotation, spawnedParent);
                 lastPulledTime = Time.fixedTime;
-            }
+                foreach(Renderer r in rs)
+                    r.enabled = false;
+            } 
+        } else if (balance.availableCurrency < buyCost) {
+            Destroy(spawnedObject);
+            foreach(Renderer r in rs)
+                r.enabled = true;
         }
     }
 }

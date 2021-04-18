@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5608169757505730292}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BProjectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2590218184180430778}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: BTurretSnap
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2286196725682781563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 3.73471, z: 12.973418}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children:
   - {fileID: 5011699156126243034}
@@ -71,12 +71,12 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: e92113417dd9e5849b1365390e4caf42,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e92113417dd9e5849b1365390e4caf42,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.73471
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e92113417dd9e5849b1365390e4caf42,
         type: 3}
@@ -123,6 +123,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: e92113417dd9e5849b1365390e4caf42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: e92113417dd9e5849b1365390e4caf42,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -138,6 +143,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 251a2bc3be14e634ca4dee3612b0a93e, type: 2}
+    - target: {fileID: -516098083770646512, guid: e92113417dd9e5849b1365390e4caf42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e92113417dd9e5849b1365390e4caf42,
         type: 3}
       propertyPath: m_Name
@@ -147,6 +157,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: e92113417dd9e5849b1365390e4caf42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416272007918961125, guid: e92113417dd9e5849b1365390e4caf42,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e92113417dd9e5849b1365390e4caf42, type: 3}
@@ -273,10 +293,20 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Tower
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 76d067fc7676e1b4884c34d505c0704d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7687397324775108711, guid: 76d067fc7676e1b4884c34d505c0704d,
         type: 3}
       propertyPath: m_TagString
       value: Tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 7687397324775108711, guid: 76d067fc7676e1b4884c34d505c0704d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d067fc7676e1b4884c34d505c0704d, type: 3}
