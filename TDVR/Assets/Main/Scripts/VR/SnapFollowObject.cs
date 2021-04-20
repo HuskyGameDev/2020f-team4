@@ -6,8 +6,6 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SnapFollowObject : MonoBehaviour
 {
     public LayerMask layerMask;
-    public Transform spawner;
-    public bool showShpereCastInGizmo = false;
     public string allowedLayer = "Placeable Ground";
 
     private GameObject snapZone;
@@ -45,7 +43,6 @@ public class SnapFollowObject : MonoBehaviour
         // disable the snap zone
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = false;
         snapZone.SetActive(false);
-        Debug.Log(placedTower);
         if (placedTower)
             placedTower.GetComponent<BTurret>().canShoot = false;
         exists = false;

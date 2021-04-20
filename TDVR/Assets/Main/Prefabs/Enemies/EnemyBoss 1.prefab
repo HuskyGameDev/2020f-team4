@@ -185,6 +185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   health: 500
+  particle: {fileID: 751526468107900366, guid: c32e89560d4599b43a28c21d86e5f0bd, type: 3}
 --- !u!114 &4942110573472460228
 MonoBehaviour:
   m_ObjectHideFlags: 0

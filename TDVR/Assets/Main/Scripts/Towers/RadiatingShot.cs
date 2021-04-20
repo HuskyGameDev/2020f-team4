@@ -6,9 +6,11 @@ public class RadiatingShot : BasicShot
 {
     private float startTime;
     public float deleteGap = 1f;
+    private List<Transform> enemies;
 
     public override void Attack (Transform targets)
     {
+        enemies = new List<Transform>();
         startTime = Time.time;
     }
 
@@ -16,16 +18,27 @@ public class RadiatingShot : BasicShot
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy"){
-            Debug.Log("Hitting Enemy with Collider");
-            base.Damage(other.transform);
+            Debug.Log("Adding enemy to list");
+            enemies.Add(other.transform);
         }
+    }
 
+    void OnTriggerExit(Collider other)
+    {
+        if(other.tag == "Enemy"){
+            Debug.Log("Removing enemy from list");
+            enemies.Remove(other.transform);
+        }
     }
 
     //Timer for when to delete the collider
     void Update()
     {
         if(Time.time - startTime >= deleteGap){
+            foreach (Transform enemy in enemies) {
+                if (enemy)
+                    base.Damage(enemy);
+            }
             Destroy(gameObject);
         }
 

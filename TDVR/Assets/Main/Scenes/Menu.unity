@@ -757,6 +757,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &169258258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 169258259}
+  - component: {fileID: 169258261}
+  - component: {fileID: 169258260}
+  m_Layer: 0
+  m_Name: Title
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &169258259
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169258258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1897550508}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 46.6}
+  m_SizeDelta: {x: 100, y: 56}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &169258260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169258258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 193cec116e36ce7448bb6db9cfb18800, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &169258261
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 169258258}
+  m_CullTransparentMesh: 0
 --- !u!1 &172887916
 GameObject:
   m_ObjectHideFlags: 0
@@ -4743,11 +4817,11 @@ RectTransform:
   m_LocalScale: {x: 1.303, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1897550508}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -31.3}
+  m_AnchoredPosition: {x: 47, y: -31.3}
   m_SizeDelta: {x: 66.88475, y: 24.757954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1078883065
@@ -6691,11 +6765,11 @@ RectTransform:
   m_LocalScale: {x: 1.303, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1897550508}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 31.2}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 66.88475, y: 24.757954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322317600
@@ -7178,121 +7252,121 @@ MonoBehaviour:
   - name: BasicTowerShoot
     clip: {fileID: 8300000, guid: 8d6e82401e4c8384bbf04da32b4f96af, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: RapidTowerShoot
     clip: {fileID: 8300000, guid: afd7cc6ceba74b4439d1d46f27f9c4c1, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: SniperTowerShoot
     clip: {fileID: 8300000, guid: 0b6d8f5b20eb9cb4caa6a37f67bf4404, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: AOETowerShoot
     clip: {fileID: 8300000, guid: d7150d0a58a3b9140a693f47eb3d25c4, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: BasicTowerPlacement
     clip: {fileID: 8300000, guid: 78a0d4ae53538be40b9a18add762741c, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: TowerUpgrade
     clip: {fileID: 8300000, guid: 3c1ff8f3f94bea54f9b8f29cceee3aa2, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyDeath_1
     clip: {fileID: 8300000, guid: f8dc2371797d72d4d821e544a52e715f, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyDeath_2
     clip: {fileID: 8300000, guid: 047b17a5e3e629d40951e276d6534830, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyLaugh_1
     clip: {fileID: 8300000, guid: 129e50e29653bfd4aa1636dfed271579, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyLaugh_2
     clip: {fileID: 8300000, guid: 414cc13c1c531bc46965d9137088d239, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyGrunt_1
     clip: {fileID: 8300000, guid: 231928d9d933d624d849b96bf883c6b7, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyGrunt_2
     clip: {fileID: 8300000, guid: 6f9ad35ca6a532d469c95dc4d4cbca92, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyGrowl_1
     clip: {fileID: 8300000, guid: 358d3ea73f66cba4eb2557462b5a0b3b, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyGrowl_2
     clip: {fileID: 8300000, guid: 982d69cee7b26a14aa5b18546b59bd11, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: GameOver
     clip: {fileID: 8300000, guid: 1289961b5da755b49ba976d4071a807f, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: EnemyReachedGoal
     clip: {fileID: 8300000, guid: 12d73e1ff1c92e944b73777380ed90e9, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: Teleport
     clip: {fileID: 8300000, guid: 346e6eb35e9798045b21afb8e1f096c9, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: RoundEnd
     clip: {fileID: 8300000, guid: 834dc84c07ed8794bbbce62af95414cb, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: RoundStart
     clip: {fileID: 8300000, guid: e042d9d5d2e93f64bb6d2afc39ad26ee, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: ChildishMusic
     clip: {fileID: 8300000, guid: 6603c48dcd2108348ac5970c619f2a81, type: 3}
     volume: 0.5
-    pitch: 0
+    pitch: 1
     loop: 0
     source: {fileID: 0}
 --- !u!4 &1438549583
@@ -7900,11 +7974,11 @@ RectTransform:
   m_LocalScale: {x: 1.303, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1897550508}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -47, y: -31.3}
   m_SizeDelta: {x: 66.88475, y: 24.757954}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1753556544
@@ -8430,7 +8504,7 @@ MonoBehaviour:
   buttonMap:
   - button: {fileID: 1322317600}
     action: 0
-    sceneName: Main/Scenes/Level 1
+    sceneName: Main/Scenes/Level 2
   - button: {fileID: 1753556544}
     action: 1
     sceneName: 
@@ -8528,6 +8602,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_Children:
+  - {fileID: 169258259}
   - {fileID: 1322317599}
   - {fileID: 1753556543}
   - {fileID: 1078883064}

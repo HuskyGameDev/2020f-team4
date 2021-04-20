@@ -86,6 +86,9 @@ public class BTurret : MonoBehaviour
                 case 'S':
                     FindObjectOfType<AudioManager>().Play("SniperTowerShoot");
                     break;
+                case 'A':
+                    FindObjectOfType<AudioManager>().Play("AOETowerShoot");
+                    break;
                 default:
                     FindObjectOfType<AudioManager>().Play("BasicTowerShoot");
                     break;

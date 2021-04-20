@@ -45,6 +45,7 @@ public class SpawnTower : MonoBehaviour
             }*/
             // testing
             lastPulledTime = Time.fixedTime;
+            Debug.Log("Buying Tower");
             balance.SpendCurrency(buyCost);
             foreach(Renderer r in rs)
                 r.enabled = true;
