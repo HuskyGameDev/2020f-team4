@@ -63,6 +63,7 @@ public class Pathing : MonoBehaviour
                 {
                     currentWP = 0;
                     WaveSpawner.EnemiesAlive--;
+                    WaveSpawner.EnemiesDead++;
 
                     health.DecrementHealth();
 

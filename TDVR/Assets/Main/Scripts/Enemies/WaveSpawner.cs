@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+    [SerializeField]
     public static int EnemiesAlive = 0;
+    [SerializeField]
+    public static int EnemiesDead = 0;
 
     public Wave[] waves;
 
@@ -16,7 +19,9 @@ public class WaveSpawner : MonoBehaviour
     public float countdown = 2f;
 
     private int waveIndex = 0;
+    [SerializeField]
     private int enemiesSpawned = 0;
+    private bool waveOver = true;
     private Wave wave;
     public Canvas menuPane;
     public Canvas gameOver; //gameover canvas
@@ -29,21 +34,24 @@ public class WaveSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (wave != null && enemiesSpawned == wave.count && EnemiesAlive <= 0 && !(health.GetHealth() <= 0)) {    //where menu is made visible if all enemies are defeated and player is still alive
+        //Debug.Log(EnemiesDead);
+        if (wave != null && enemiesSpawned == wave.count && /*EnemiesAlive <= 0*/EnemiesDead == wave.count && !(health.GetHealth() <= 0)) {    //where menu is made visible if all enemies are defeated and player is still alive
             menuPane.enabled = true;
             if (waveIndex == waves.Length) {
                 menuPane.transform.GetChild(0).gameObject.SetActive(false); //finished all waves, only get exit button in the menu and no next wave button
                 menuPane.transform.GetChild(1).gameObject.SetActive(true);
             }
             FindObjectOfType<AudioManager>().Play("RoundEnd"); // ROUND END SOUND
+            StartCoroutine(PlaySoundDelayed("ChildishMusic", 2f)); // BETWEEN-ROUND MUSIC
 
             enemiesSpawned = 0;
+            EnemiesDead = 0;
         }
 
         if (health.GetHealth() <= 0 && enemiesSpawned > 0)    //if player DIES only give them the game over splash and the quit botton, no next round button. F.
         {
             StartCoroutine(PlaySoundDelayed("GameOver", 1f)); // GAME OVER SOUND
-            StartCoroutine(PlaySoundDelayed("ChildishMusic", 2f)); // BETWEEN-ROUND MUSIC
+            //StartCoroutine(PlaySoundDelayed("ChildishMusic", 2f)); // BETWEEN-ROUND MUSIC
             menuPane.enabled = true;
             menuPane.transform.GetChild(0).gameObject.SetActive(false);
             gameOver.enabled = true;

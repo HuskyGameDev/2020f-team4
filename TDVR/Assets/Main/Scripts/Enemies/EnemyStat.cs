@@ -9,6 +9,7 @@ public class EnemyStat : MonoBehaviour
     private Currency currency;
     private int moneyGain = 0;
     public GameObject particle;
+    private bool deadFlag = false;
 
     public void Start() 
     {
@@ -19,8 +20,9 @@ public class EnemyStat : MonoBehaviour
     {
         health -= amount;
 
-        if (health <= 0)
+        if (health <= 0 && deadFlag == false)
         {
+            deadFlag = true;
             Die();
         }
 
@@ -30,6 +32,7 @@ public class EnemyStat : MonoBehaviour
     void Die()
     {
         WaveSpawner.EnemiesAlive--;
+        WaveSpawner.EnemiesDead++;
         currency.IncreaseCurrency(moneyGain);
         FindObjectOfType<AudioManager>().Play("EnemyDeayth_1"); // ENEMY DEATH SOUND
         GameObject p = Instantiate(particle, transform.position, transform.rotation);
