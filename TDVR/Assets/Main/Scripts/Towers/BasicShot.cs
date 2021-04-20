@@ -8,6 +8,8 @@ public class BasicShot : MonoBehaviour
     private Transform target;
     public float speed = 100f;
     public int damage = 1;
+    Vector3 direction;
+    float traveled;
 
     public virtual void Attack (Transform targets)
     {
@@ -21,23 +23,25 @@ public class BasicShot : MonoBehaviour
             return;
         }
 
-        Vector3 direction = target.position - transform.position;
-        float traveled = speed * Time.deltaTime;
-
-        if(direction.magnitude <= traveled)
-        {
-            Hit();
-            return;
-        }
+        direction = target.position - transform.position;
+        traveled = speed * Time.deltaTime;
 
         transform.Translate(direction.normalized * traveled, Space.World);
 
     }
 
+    void OnTriggerEnter(Collider other) {
+        if (other.tag == "Enemy") {
+            Hit();
+        } else {
+            Destroy(gameObject);
+        }
+    }
+
     void Hit()
     {
-        Destroy(gameObject);
         Damage(target);
+        Destroy(gameObject);
     }
 
     protected void Damage(Transform enemy)

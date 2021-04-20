@@ -53,5 +53,6 @@ public class TeleportController : MonoBehaviour
     public void SetRotation(Transform reference)
     {
         transform.SetPositionAndRotation(transform.position, Quaternion.Euler(0, reference.eulerAngles.y, 0));
+        FindObjectOfType<AudioManager>().Play("Teleport"); // TELEPORT SOUND
     }
 }

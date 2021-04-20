@@ -134,7 +134,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2590218184180430778}
   - component: {fileID: 5917883775373282712}
-  - component: {fileID: -4892421079840617202}
   - component: {fileID: 714132497897615103}
   - component: {fileID: 8229131617222972744}
   - component: {fileID: 6599744584808380571}
@@ -177,25 +176,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-4892421079840617202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2286196725682781563}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bbbe67d490f1044fb8d710f81e0c8b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  range: 50
-  fireRate: 2
-  enemyTag: Enemy
-  canShoot: 1
-  RbasicShot: {fileID: 3463417146674414589, guid: 2499598062256a442ada04618a619b25,
-    type: 3}
-  RProjectileSpawn: {fileID: 5608169757505730292}
 --- !u!114 &714132497897615103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,6 +195,9 @@ MonoBehaviour:
   BbasicShot: {fileID: 3463417146674414589, guid: a80075ceccef3b24892a8e8d39e93d2e,
     type: 3}
   BProjectileSpawn: {fileID: 5608169757505730292}
+  particle: {fileID: 5806499457390249077, guid: 5965ccc7ea88f1846a270b0cf4e0c438,
+    type: 3}
+  soldier: {fileID: 8995603064522899861}
   TowerType: 82
 --- !u!114 &8229131617222972744
 MonoBehaviour:
@@ -330,8 +313,6 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 4369
-  spawner: {fileID: 0}
-  showShpereCastInGizmo: 0
   allowedLayer: Placeable Tower
 --- !u!65 &2916792454490037116
 BoxCollider:
@@ -639,6 +620,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76d067fc7676e1b4884c34d505c0704d, type: 3}
+--- !u!1 &8995603064522899861 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 76d067fc7676e1b4884c34d505c0704d,
+    type: 3}
+  m_PrefabInstance: {fileID: 8077105336932154564}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7013611605331563044 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7979536201636319520, guid: 76d067fc7676e1b4884c34d505c0704d,

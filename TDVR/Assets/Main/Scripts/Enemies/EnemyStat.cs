@@ -21,9 +21,6 @@ public class EnemyStat : MonoBehaviour
 
         if (health <= 0)
         {
-            FindObjectOfType<AudioManager>().Play("EnemyDeayth_1"); // ENEMY DEATH SOUND
-            GameObject p = Instantiate(particle, transform.position, transform.rotation);
-            Destroy(p, 1);
             Die();
         }
 
@@ -34,6 +31,9 @@ public class EnemyStat : MonoBehaviour
     {
         WaveSpawner.EnemiesAlive--;
         currency.IncreaseCurrency(moneyGain);
+        FindObjectOfType<AudioManager>().Play("EnemyDeayth_1"); // ENEMY DEATH SOUND
+        GameObject p = Instantiate(particle, transform.position, transform.rotation);
+        Destroy(p, 5);
         Destroy(gameObject);
     }
 }

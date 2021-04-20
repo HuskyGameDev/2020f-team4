@@ -43,8 +43,13 @@ public class SnapFollowObject : MonoBehaviour
         // disable the snap zone
         snapZone.GetComponentInChildren<MeshRenderer>().enabled = false;
         snapZone.SetActive(false);
-        if (placedTower)
+        if (placedTower) {
             placedTower.GetComponent<BTurret>().canShoot = false;
+            FindObjectOfType<AudioManager>().Play("TowerUpgrade"); // TOWER UPGRADE SOUND
+        } else {
+            FindObjectOfType<AudioManager>().Play("BasicTowerPlacement"); // TOWER PLACEMENT SOUND
+        }
+
         exists = false;
         Destroy(GetComponent<XRGrabInteractable>());
     }

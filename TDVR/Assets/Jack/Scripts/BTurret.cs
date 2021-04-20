@@ -18,6 +18,8 @@ public class BTurret : MonoBehaviour
 
     public GameObject BbasicShot;
     public Transform BProjectileSpawn;
+    public GameObject particle;
+    public GameObject soldier;
     public char TowerType; // specifies the type of tower for sound purposes
     // Start is called before the first frame update
     void Start()
@@ -64,6 +66,13 @@ public class BTurret : MonoBehaviour
         }
 
         cooldown -= Time.deltaTime;
+
+        // rotate soldier
+        if (soldier && target && canShoot) {
+            Vector3 direction = target.transform.position - transform.position;
+            soldier.transform.rotation = Quaternion.LookRotation (direction, Vector3.up);
+            //BProjectileSpawn.rotation = Quaternion.LookRotation (direction, Vector3.up);
+        }
     }
 
     void Shoot()
@@ -74,6 +83,12 @@ public class BTurret : MonoBehaviour
         if (shot != null)
         {
             shot.Attack(target);
+
+            if (particle) {
+                GameObject p = Instantiate(particle, BProjectileSpawn.position, BProjectileSpawn.rotation);
+                Destroy(p, 5);
+            }
+            
 
             // play correct sound
             switch (TowerType) {

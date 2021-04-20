@@ -7,6 +7,7 @@ public class RadiatingShot : BasicShot
     private float startTime;
     public float deleteGap = 1f;
     private List<Transform> enemies;
+    public GameObject particle;
 
     public override void Attack (Transform targets)
     {
@@ -18,7 +19,6 @@ public class RadiatingShot : BasicShot
     void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy"){
-            Debug.Log("Adding enemy to list");
             enemies.Add(other.transform);
         }
     }
@@ -26,7 +26,6 @@ public class RadiatingShot : BasicShot
     void OnTriggerExit(Collider other)
     {
         if(other.tag == "Enemy"){
-            Debug.Log("Removing enemy from list");
             enemies.Remove(other.transform);
         }
     }
@@ -39,6 +38,8 @@ public class RadiatingShot : BasicShot
                 if (enemy)
                     base.Damage(enemy);
             }
+            GameObject p = Instantiate(particle, transform.position, transform.rotation);
+            Destroy(p, 5);
             Destroy(gameObject);
         }
 

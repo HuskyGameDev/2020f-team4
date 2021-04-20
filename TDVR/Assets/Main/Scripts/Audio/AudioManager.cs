@@ -29,6 +29,8 @@ public class AudioManager : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+
+        Play("ChildishMusic");
     }
 
     public void Play(string name) {
@@ -39,6 +41,12 @@ public class AudioManager : MonoBehaviour
 
         //Use following line to play sounds within scripts:
         //FindObjectOfType<AudioManager>().Play("NameOfSound");
+    }
+
+    public void Stop(string name) {
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s != null)
+            s.source.Stop();
     }
 
 }

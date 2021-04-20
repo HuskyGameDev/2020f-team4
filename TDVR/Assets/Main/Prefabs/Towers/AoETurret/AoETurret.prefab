@@ -63,12 +63,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 0.3
-  fireRate: 1
+  fireRate: 0.33
   enemyTag: Enemy
   canShoot: 0
   BbasicShot: {fileID: 5950594861038910056, guid: 0d89afbfefbf6294c91296be432e233d,
     type: 3}
   BProjectileSpawn: {fileID: 5242205701451632099}
+  particle: {fileID: 8631315068801947688, guid: f3fadd6136115934e8b2b74a137bff48,
+    type: 3}
+  soldier: {fileID: 0}
   TowerType: 65
 --- !u!54 &7355597341346143423
 Rigidbody:
@@ -222,13 +225,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7279681985348442305}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 14.999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3891884514585289163}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1001 &5263235089544036083
 PrefabInstance:
   m_ObjectHideFlags: 0
