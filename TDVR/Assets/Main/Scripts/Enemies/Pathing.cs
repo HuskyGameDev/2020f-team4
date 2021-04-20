@@ -10,7 +10,8 @@ public class Pathing : MonoBehaviour
     public GameObject[] waypoints;
     int currentWP = 0;
     public float rotationSpeed = 50f;
-    private float speed = 5f;
+    //private float speed = 5f;
+    private float speed;
     public float accuracyWP = 1f;
     public float scaleFactor = 1f;
 
@@ -35,6 +36,7 @@ public class Pathing : MonoBehaviour
 
         goal = waypoints[waypoints.Length - 1].transform;
         // rotationSpeed *= scaleFactor;
+        speed = stat.speed;
         speed *= scaleFactor;
         accuracyWP *= scaleFactor;
 

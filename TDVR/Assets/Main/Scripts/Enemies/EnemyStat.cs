@@ -7,14 +7,14 @@ public class EnemyStat : MonoBehaviour
     public int speed;
     public int health = 5;
     private Currency currency;
-    private int moneyGain = 0;
+    public int moneyGain = 0;
     public GameObject particle;
     private bool deadFlag = false;
 
     public void Start() 
     {
         currency = GameObject.FindGameObjectWithTag("Currency").GetComponent<Currency>();
-        moneyGain = health;
+        //moneyGain = health;
     }
     public void TakeDamage(int amount)
     {

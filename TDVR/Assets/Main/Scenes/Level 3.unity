@@ -12763,22 +12763,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 6635668870691113812, guid: d4be7b4e02ac2c940a5d307efa40acfb, type: 3}
-    count: 3
+    count: 5
     rate: 1
   - enemy: {fileID: 2215368479805406041, guid: ffefe627514eb7041bc32cb519bae467, type: 3}
     count: 10
     rate: 2
   - enemy: {fileID: 7939908375229745470, guid: 6668afa3f47b3ae40a497a73266af2cd, type: 3}
-    count: 1
+    count: 3
     rate: 1
   - enemy: {fileID: 5034322919819160679, guid: 5bc59e29348862f48ba6a52f1d8d650e, type: 3}
     count: 2
     rate: 0.2
   - enemy: {fileID: 2215368479805406041, guid: ffefe627514eb7041bc32cb519bae467, type: 3}
-    count: 50
+    count: 100
     rate: 2
   - enemy: {fileID: 7939908375229745470, guid: 6668afa3f47b3ae40a497a73266af2cd, type: 3}
-    count: 50
+    count: 75
     rate: 1
   - enemy: {fileID: 5034322919819160679, guid: 5bc59e29348862f48ba6a52f1d8d650e, type: 3}
     count: 50
@@ -12786,6 +12786,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1415214552}
   timeBetweenWaves: 5
   countdown: 2
+  enemiesSpawned: 0
   menuPane: {fileID: 697261506}
   gameOver: {fileID: 169842925}
   health: {fileID: 1663488240}

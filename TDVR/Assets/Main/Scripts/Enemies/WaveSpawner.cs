@@ -42,7 +42,7 @@ public class WaveSpawner : MonoBehaviour
                 menuPane.transform.GetChild(1).gameObject.SetActive(true);
             }
             FindObjectOfType<AudioManager>().Play("RoundEnd"); // ROUND END SOUND
-            StartCoroutine(PlaySoundDelayed("ChildishMusic", 2f)); // BETWEEN-ROUND MUSIC
+            StartCoroutine(PlaySoundDelayed("ChildishMusic", 1f)); // BETWEEN-ROUND MUSIC
 
             enemiesSpawned = 0;
             EnemiesDead = 0;

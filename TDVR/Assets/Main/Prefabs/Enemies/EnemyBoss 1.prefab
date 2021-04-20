@@ -183,8 +183,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2968292087992b44a91f6c63bd65f8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  health: 500
+  speed: 2
+  health: 1200
+  moneyGain: 300
   particle: {fileID: 751526468107900366, guid: c32e89560d4599b43a28c21d86e5f0bd, type: 3}
 --- !u!114 &4942110573472460228
 MonoBehaviour:

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 100
-  damage: 20
+  damage: 25
   deleteGap: 1
   particle: {fileID: 2855704644946563611, guid: 87bd49326295d9643b65b878f76aa25d,
     type: 3}
